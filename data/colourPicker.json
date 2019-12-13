@@ -1,0 +1,26 @@
+{
+  "red": [{
+    "primaryColor": "#FA8072",
+    "secondaryColor": "#00BFFF",
+    "fontColor": "#FFF5EE",
+    "imgBorder": "#FFFF00"
+  }],
+  "blue": [{
+    "primaryColor": "#00BFFF",
+    "secondaryColor": "#EEE8AA",
+    "fontColor": "#FFF5EE",
+    "imgBorder": "#556B2F"
+  }],
+  "green": [{
+    "primaryColor": "#00BFFF",
+    "secondaryColor": "#EEE8AA",
+    "fontColor": "#FFF5EE",
+    "imgBorder": "#556B2F"
+  }],
+  "black": [{
+    "primaryColor": "#00BFFF",
+    "secondaryColor": "#EEE8AA",
+    "fontColor": "#FFF5EE",
+    "imgBorder": "#556B2F"
+  }]
+}

@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css?family=BioRhyme:700|Open+Sans:600&display=swap");
+@import "./fa-scss/fontawesome.scss"; //Fonts
+@import "./fa-scss/solid.scss"; // Regular Icons
+@import "./fa-scss/brands.scss"; //Brand FA Icons
+@import "./variables.scss";
+
+@mixin container($height, $width) {
+  position: relative;
+  margin: 0 auto;
+  height: $height;
+  width: $width;
+}
+
+@mixin absCenter() {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  box-shadow: $body-box-shadow;
+  background: cornflowerblue;
+}
+
+// PDF View
+.wrapper {
+  font-family: $font-family;
+  font-stretch: condensed;
+  text-align: center;
+  box-shadow: $body-box-shadow;
+  background: $background-color;
+  height: 297mm;
+  width: 210mm;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-container {
+  @include absCenter;
+  z-index: 2;
+  height: 175px;
+  width: 175px;
+  top: 25px;
+  img {
+    border: 5px solid $img-border;
+    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.main-container {
+  @include container(350px, 730px);
+  background: $primary-color;
+  color: $primary-text-color;
+  box-shadow: $card-box-shadow;
+  border-radius: $corners;
+  top: 70px;
+  bottom: -10px;
+  z-index: 1;
+
+  #{&}__greeting {
+    @include absCenter;
+    top: 120px;
+    height: 230px;
+
+    .p-h1 {
+      color: $primary-text-color;
+      font-size: fsize(main);
+      line-height: 50%;
+    }
+
+    ul {
+      list-style-type: none;
+      text-align: center;
+      padding: 10px 0 0 0;
+      margin: 0;
+
+      li,
+      i {
+        display: inline;
+        padding: 0.5em;
+      }
+    }
+  }
+}
+
+.sub-container {
+  @include container(400px, 100%);
+  background: $primary-text-color;
+  z-index: 0;
+  top: 50px;
+
+  .p-b {
+    @include absCenter;
+    padding: 50px 0 0 0;
+    font-size: fsize(bio);
+  }
+
+  .sub-card-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    height: 250px;
+    top: 100px;
+
+    .sub-card {
+      background: $primary-color;
+      color: $primary-text-color;
+      box-shadow: $card-box-shadow;
+      border-radius: $corners;
+      margin: 15px;
+      width: 70mm;
+      height: 20mm;
+
+      .p-h2 {
+        color: $primary-text-color;
+        font-size: fsize(medium);
+        line-height: 100%;
+      }
+    }
+    .break {
+      flex-basis: 100%;
+      height: 0;
+    }
+  }
+}
+
+// .light {
+//   @include theme($light-theme: false);
+// }

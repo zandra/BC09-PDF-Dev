@@ -1,0 +1,23 @@
+$alternate-font: "Open Sans", sans-serif;
+$font-family: "BioRhyme", serif, $alternate-font;
+
+$body-box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+$card-box-shadow: 0 0 0.1cm rgba(0, 0, 0, 0.2);
+
+$background-color: #6495ed;
+$primary-color: #fa8072;
+$primary-text-color: #ffffff;
+$secondary-text-color: #000000;
+$font-sizes: (
+  "main": 35px,
+  "medium": 20px,
+  "social": 15px,
+  "bio": 25px
+);
+
+$corners: 5px;
+$img-border: #ffff00;
+
+@function fsize($fsize-name) {
+  @return map-get($font-sizes, $fsize-name);
+}
