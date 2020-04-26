@@ -5,6 +5,7 @@ const axios = require('axios');
 const pdf = require('html-pdf');
 const developerList = require('./data/developerList.json');
 const colourPicker = require('./data/colourPicker.json');
+const fs = require('fs')
 
 inquirer.registerPrompt(
   'autocomplete',
@@ -96,7 +97,6 @@ class ProfileMe {
         this.followers = !(followers === null) ? followers : 0;
         this.following = !(following === null) ? following : 0;
         this.stars = length;
-        console.log(this);
         this.createHtml();
       }
     );
@@ -158,13 +158,24 @@ class ProfileMe {
     </body>
     </html>
     `;
-    this.createPdf();
+    // this.createPdf();
+    this.createHTML()
+    this.createPdf()
+  }
+
+  createHTML(){
+    fs.writeFile(`./${this.githubUserName}-bio.html`, this.html, (err) => {
+      if (err) {
+        console.log(err)
+        return
+      }
+    })
   }
 
   createPdf() {
     pdf
-      .create(this.html)
-      .toFile(`./data/pdfs/${this.githubUserName}-bio.pdf`, function(err, res) {
+      .create('eloso85-bio.html')
+      .toFile(`./${this.githubUserName}-bio.pdf`, function(err, res) {
         if (err) return console.log(err);
         console.log(res);
       });
